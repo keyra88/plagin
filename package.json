@@ -1,0 +1,66 @@
+{
+  "name": "formattingplagin",
+  "displayName": "formattingplagin",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+"contributes": {
+    "commands": [
+        {
+            "command": "extension.convert_to_snake_case",
+            "title": "convert to snake_case"
+        },
+        {
+            "command": "extension.convertToCamelCase",
+            "title": "convert to camelCase"
+        },
+        {
+            "command": "extension.AddSpacesToMathOperators",
+            "title": "add spaces to math operators"
+        }
+    ],
+    "keybindings": [
+        {
+            "command": "extension.convert_to_snake_case",
+            "key": "Ctrl+Cmd+S", 
+            "when": "editorTextFocus"
+        },
+        {
+            "command": "extension.convertToCamelCase",
+            "key": "Ctrl+Cmd+C", 
+            "when": "editorTextFocus"
+        },
+        {
+            "command": "extension.AddSpacesToMathOperators",
+            "key": "Ctrl+Cmd+M",
+            "when": "editorTextFocus"
+        }
+    ]
+},
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.95.0",
+    "@types/mocha": "^10.0.9",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.10.0",
+    "@typescript-eslint/parser": "^8.7.0",
+    "eslint": "^9.13.0",
+    "typescript": "^5.6.3",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
